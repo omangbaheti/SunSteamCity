@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: MagicLeapManifestSettings
   m_EditorClassIdentifier: 
   m_MinimumAPILevel: 4
+  m_AllowBackgroundMusicService: 0
   m_PrivilegeGroups: []
