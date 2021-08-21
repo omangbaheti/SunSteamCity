@@ -23,7 +23,7 @@ public class GridMaker: MonoBehaviour
             {
                 for (int y = 0; y < gridArray.GetLength(1); y++)
                 {
-                    string gridPosition = x.ToString() + y.ToString();
+                    string gridPosition = x.ToString() + "," + y.ToString() + " ";
 
                     debugTextArrays[x, y] = CreateWorldText(transform, gridPosition, GetWorldPosition(x, y));
                     Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y + 1), Color.white);
