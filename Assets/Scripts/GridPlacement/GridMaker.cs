@@ -1,7 +1,8 @@
+using System;
 using TMPro;
 using UnityEngine;
 
-public class GridMaker: MonoBehaviour
+public class GridMaker<CellProperty>: MonoBehaviour
 {
     [SerializeField] private bool debugMode;    
     [SerializeField] private int width;
@@ -10,12 +11,12 @@ public class GridMaker: MonoBehaviour
     [SerializeField] private GameObject textMeshPrefab;
     TextMeshProUGUI[,] debugTextArrays; 
     
-    private void Start()
+    protected void Start()
     {
         RectTransform canvas = GetComponentInParent<RectTransform>();
         canvas.sizeDelta = new Vector2(cellSize*width, cellSize*height);
         
-        int[,] gridArray = new int[width, height];
+        CellProperty[,] gridArray = new CellProperty[width, height];
         debugTextArrays = new TextMeshProUGUI[width, height];
         if (debugMode)
         {
@@ -26,25 +27,25 @@ public class GridMaker: MonoBehaviour
                     string gridPosition = x.ToString() + "," + y.ToString() + " ";
 
                     debugTextArrays[x, y] = CreateWorldText(transform, gridPosition, GetWorldPosition(x, y));
-                    Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y + 1), Color.white);
-                    Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.white);
+                    Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y +  1), Color.white, 100f);
+                    Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.white, 100f);
                 }
             }
         }
     }
 
-    private Vector3 GetWorldPosition(int x, int y)
+    protected Vector3 GetWorldPosition(int x, int y)
     {
-        return new Vector3(x, y) * cellSize;
+        return new Vector3(x,0,y) * cellSize;
     }
 
-    private void GetGridPosition(Vector3 worldPosition, out int x, out int y)
+    protected void GetGridPosition(Vector3 worldPosition, out int x, out int z)
     {
         x = Mathf.FloorToInt(worldPosition.x / cellSize);
-        y = Mathf.FloorToInt(worldPosition.y / cellSize);
+        z = Mathf.FloorToInt(worldPosition.z / cellSize);
     }
     
-    public TextMeshProUGUI CreateWorldText(Transform parent, string gridPosition, Vector3 localPosition)
+    protected TextMeshProUGUI CreateWorldText(Transform parent, string gridPosition, Vector3 localPosition)
     {
         GameObject textMeshPro = Instantiate(textMeshPrefab, parent);
         TextMeshProUGUI textMesh = textMeshPro.GetComponent<TextMeshProUGUI>();
@@ -55,6 +56,8 @@ public class GridMaker: MonoBehaviour
 
         return textMesh;
     }
+
+    
 }
 
 
