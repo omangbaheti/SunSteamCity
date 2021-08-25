@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d60039cc1924ba7b04159416b2c6e62, type: 3}
+  m_Name: Farms
+  m_EditorClassIdentifier: 
+  sourceBuildingType: 0
+  validInputs: 
+  validOutputs: 010000000200000003000000
+  sourceBuildingLevels:
+  - levelName: Level 1
+    level: 1
+    cost: 10
+    productionRate: 1
+    produceValue: 1
+    model: {fileID: 0}
+    buildingDescription: This is dummy text for level 1 farm
+  - levelName: Level 2
+    level: 2
+    cost: 10000
+    productionRate: 1
+    produceValue: 1000
+    model: {fileID: 0}
+    buildingDescription: This is dummy text for level 2 farm
