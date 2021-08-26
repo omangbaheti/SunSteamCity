@@ -2,14 +2,9 @@
 using UnityEngine;
 
 [CreateAssetMenu]
-public class ProductionBuildingAsset:ScriptableObject
+public class ProductionBuildingAsset : BuildingAssetTemplate
 {
-    [SerializeField] private List<CoreBuildingTypes> validInputs;
-    [SerializeField] private List<CoreBuildingTypes> validOutputs;
     [SerializeField] private List<ProductionBuilding> productionBuildingLevels;
-
-    public List<CoreBuildingTypes> ValidInputs => validInputs;
-    public List<CoreBuildingTypes> ValidOutputs => validOutputs;
     
     public ProductionBuilding GetLevelDetails(int level)
     {
