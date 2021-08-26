@@ -8,5 +8,4 @@ public class BuildingAssetTemplate : ScriptableObject
 
     public List<CoreBuildingTypes> ValidInputs => validInputs;
     public List<CoreBuildingTypes> ValidOutputs => validOutputs;
-    
 }

@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [CreateAssetMenu]
-public class SourceBuildingAsset:BuildingAssetTemplate
+public class SourceBuildingAsset : BuildingAssetTemplate
 {
     [SerializeField] private SourceBuildingTypes sourceBuildingType;
     [SerializeField] private List<SourceBuilding> sourceBuildingLevels;

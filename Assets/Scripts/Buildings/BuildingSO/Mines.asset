@@ -12,21 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d60039cc1924ba7b04159416b2c6e62, type: 3}
   m_Name: Mines
   m_EditorClassIdentifier: 
-  sourceBuildingType: 1
   validInputs: 
   validOutputs: 010000000200000003000000
+  sourceBuildingType: 1
   sourceBuildingLevels:
   - levelName: Level 1
     level: 1
     cost: 100
     productionRate: 1
-    produceValue: 10
     model: {fileID: 0}
     buildingDescription: This is dummy text for level 1 mine
+    produceValue: 10
   - levelName: Level 2
     level: 2
     cost: 100000
     productionRate: 1
-    produceValue: 10000
     model: {fileID: 0}
     buildingDescription: This is dummy text for level 2 mine
+    produceValue: 10000
