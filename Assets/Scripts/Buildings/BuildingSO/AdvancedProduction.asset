@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a0ff3729cb72540bfc836d5541a5b9, type: 3}
+  m_Name: AdvancedProduction
+  m_EditorClassIdentifier: 
+  validInputs: 01000000
+  validOutputs: 0200000003000000
+  productionBuildingLevels:
+  - levelName: Level 1
+    level: 1
+    cost: 12421
+    productionRate: 135
+    model: {fileID: 0}
+    buildingDescription: "13513twrgbw\t"
+    improvementPercentage: 132
