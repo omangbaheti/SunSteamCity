@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GridManager : GridMaker<bool>
+public class GridManager : GridMaker
 {
     [SerializeField] private GameObject housePrefab;
 

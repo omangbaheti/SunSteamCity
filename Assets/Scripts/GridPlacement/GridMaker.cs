@@ -1,8 +1,7 @@
-using System;
 using TMPro;
 using UnityEngine;
 
-public class GridMaker<CellProperty>: MonoBehaviour
+public class GridMaker: MonoBehaviour
 {
     [SerializeField] private bool debugMode;    
     [SerializeField] private int width;
@@ -14,23 +13,25 @@ public class GridMaker<CellProperty>: MonoBehaviour
     
     protected void Start()
     {
+        Cell cell = new Cell(2, 3);
+        int cellx= cell.Position.x;
+
+
         RectTransform canvas = GetComponentInParent<RectTransform>();
         canvas.sizeDelta = new Vector2(cellSize*width, cellSize*height);
         
-        CellProperty[,] gridArray = new CellProperty[width, height];
+        bool[,] gridArray = new bool[width, height];
         debugTextArrays = new TextMeshProUGUI[width, height];
-        if (debugMode)
+        if (!debugMode) return;
+        for (int x = 0; x < gridArray.GetLength(0); x++)
         {
-            for (int x = 0; x < gridArray.GetLength(0); x++)
+            for (int z = 0; z < gridArray.GetLength(1); z++)
             {
-                for (int z = 0; z < gridArray.GetLength(1); z++)
-                {
-                    string gridPosition = x.ToString() + "," + z.ToString() + " ";
+                string gridPosition = x.ToString() + "," + z.ToString() + " ";
 
-                    debugTextArrays[x, z] = CreateWorldText(transform, gridPosition, GetWorldPosition(x, z));
-                    Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x, z +  1), Color.white, 100f);
-                    Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x + 1, z), Color.white, 100f);
-                }
+                debugTextArrays[x, z] = CreateWorldText(transform, gridPosition, GetWorldPosition(x, z));
+                Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x, z +  1), Color.white, 100f);
+                Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x + 1, z), Color.white, 100f);
             }
         }
     }

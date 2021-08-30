@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class MouseToScreen : MonoBehaviour
 {
+    private static Camera mainCam = Camera.main;
     
     public static Vector3 GetWorldPosition()
     {
         Plane plane= new Plane(Vector3.up, 0);
-        Ray screenToWorldRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray screenToWorldRay = mainCam.ScreenPointToRay(Input.mousePosition);
         if (plane.Raycast(screenToWorldRay, out float distance))
         {
             Vector3 worldPosition = screenToWorldRay.GetPoint(distance);
