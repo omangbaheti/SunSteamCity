@@ -9,6 +9,7 @@ public class GridMaker<CellProperty>: MonoBehaviour
     [SerializeField] private int height;
     [SerializeField] private int cellSize;
     [SerializeField] private GameObject textMeshPrefab;
+    
     TextMeshProUGUI[,] debugTextArrays; 
     
     protected void Start()
@@ -22,21 +23,21 @@ public class GridMaker<CellProperty>: MonoBehaviour
         {
             for (int x = 0; x < gridArray.GetLength(0); x++)
             {
-                for (int y = 0; y < gridArray.GetLength(1); y++)
+                for (int z = 0; z < gridArray.GetLength(1); z++)
                 {
-                    string gridPosition = x.ToString() + "," + y.ToString() + " ";
+                    string gridPosition = x.ToString() + "," + z.ToString() + " ";
 
-                    debugTextArrays[x, y] = CreateWorldText(transform, gridPosition, GetWorldPosition(x, y));
-                    Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y +  1), Color.white, 100f);
-                    Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.white, 100f);
+                    debugTextArrays[x, z] = CreateWorldText(transform, gridPosition, GetWorldPosition(x, z));
+                    Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x, z +  1), Color.white, 100f);
+                    Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x + 1, z), Color.white, 100f);
                 }
             }
         }
     }
 
-    protected Vector3 GetWorldPosition(int x, int y)
+    protected Vector3 GetWorldPosition(int x, int z)
     {
-        return new Vector3(x,0,y) * cellSize;
+        return new Vector3(x,0,z) * cellSize;
     }
 
     protected void GetGridPosition(Vector3 worldPosition, out int x, out int z)
@@ -53,10 +54,18 @@ public class GridMaker<CellProperty>: MonoBehaviour
         tmpTransform.sizeDelta = new Vector2(cellSize, cellSize);
         tmpTransform.localPosition = localPosition;
         textMesh.text = gridPosition;
-
         return textMesh;
     }
 
+    public bool CanBuild(Transform currentTransform)
+    {
+        return transform == null;
+    }
+
+    public void OnGridObjectChanged()
+    {
+        
+    }
     
 }
 

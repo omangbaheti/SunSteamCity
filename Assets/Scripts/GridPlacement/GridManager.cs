@@ -13,7 +13,6 @@ public class GridManager : GridMaker<bool>
         {
             Vector3 worldPosition = MouseToScreen.GetWorldPosition();
             GetGridPosition(worldPosition, out int x, out int z);
-            Debug.Log($"Grid:{x} {z}");
             Instantiate(housePrefab, GetWorldPosition(x, z), Quaternion.identity);
         }
     }
