@@ -1,8 +1,20 @@
 using UnityEngine;
 
-public class GridManager : GridMaker
+public class GridManager : GridProperties
 {
     [SerializeField] private GameObject housePrefab;
+    
+    public void Start()
+    {
+
+        for (int x = 0; x < GridArray.GetLength(0); x++)
+        {
+            for (int z = 0; z < GridArray.GetLength(1); z++)
+            {
+                GridArray[x, z] = new Cell();
+            }
+        }
+    }
 
     private void Update()
     {   
@@ -20,4 +32,5 @@ public class GridManager : GridMaker
         Vector3 worldPosition = MouseToScreen.GetWorldPosition();
         Instantiate(housePrefab, worldPosition, Quaternion.identity);
     }
+    
 }

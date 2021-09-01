@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(GridMaker))]
+[RequireComponent(typeof(GridManager))]
 public class DebugGrid : GridProperties
 {
     public bool canDebug;
@@ -14,14 +14,12 @@ public class DebugGrid : GridProperties
         RectTransform canvas = GetComponentInParent<RectTransform>();
         canvas.sizeDelta = new Vector2(CellSize * Width, CellSize *Height);
         if(!canDebug) return;
-        GridMaker grid = GetComponent<GridMaker>();
-        
+
         for (int x = 0; x < GridArray.GetLength(0); x++)
         {
             for (int z = 0; z < GridArray.GetLength(1); z++)
             {
-                string gridPosition = x.ToString() + "," + z.ToString() + " ";
-
+                string gridPosition = GridArray[x,z].canBuild.ToString();
                 debugTextArrays[x, z] = CreateWorldText(transform, gridPosition, GetWorldPosition(x, z));
                 Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x, z +  1), Color.white, 100f);
                 Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x + 1, z), Color.white, 100f);

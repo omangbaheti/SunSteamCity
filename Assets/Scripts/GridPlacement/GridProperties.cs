@@ -12,7 +12,10 @@ public class GridProperties : MonoBehaviour
     public static int Width { get => width; }
     public static int Height { get => height; }
     public static int CellSize { get => cellSize; }
-    public Cell[,] GridArray { get => gridArray; }
+    public Cell[,] GridArray { 
+        get => gridArray;
+        set => gridArray = value;
+    }
     
     public Vector3 GetWorldPosition(int x, int z)
     {
