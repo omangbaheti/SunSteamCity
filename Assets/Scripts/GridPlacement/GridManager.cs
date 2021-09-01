@@ -5,7 +5,7 @@ public class GridManager : GridMaker
     [SerializeField] private GameObject housePrefab;
 
     private void Update()
-    {
+    {   
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 worldPosition = MouseToScreen.GetWorldPosition();

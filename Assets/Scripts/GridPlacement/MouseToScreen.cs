@@ -13,12 +13,10 @@ public class MouseToScreen : MonoBehaviour
         if (plane.Raycast(screenToWorldRay, out float distance))
         {
             Vector3 worldPosition = screenToWorldRay.GetPoint(distance);
-            Debug.Log(worldPosition);
             return worldPosition;
         }
         else
         {
-            Debug.Log("no Plane found");
             return Vector3.zero;
         }
     }
