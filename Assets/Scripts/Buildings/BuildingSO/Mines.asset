@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   validInputs: 
   validOutputs: 010000000200000003000000
+  width: 1
+  length: 1
   sourceBuildingType: 1
   sourceBuildingLevels:
   - levelName: Level 1

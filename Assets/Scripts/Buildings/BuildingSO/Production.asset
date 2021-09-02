@@ -14,18 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   validInputs: 0000000003000000
   validOutputs: 0300000002000000
+  width: 1
+  length: 1
   productionBuildingLevels:
   - levelName: Level 1
     level: 1
     cost: 50
     productionRate: 2
-    improvementPercentage: 50
     model: {fileID: 0}
     buildingDescription: This is dummy text for level 1 Production Unit
+    improvementPercentage: 50
   - levelName: Level 2
     level: 2
     cost: 50000
     productionRate: 2
-    improvementPercentage: 250
     model: {fileID: 0}
     buildingDescription: This is dummy text for level 2 Production Unit
+    improvementPercentage: 250

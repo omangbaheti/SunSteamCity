@@ -19,7 +19,7 @@ public class DebugGrid : GridProperties
         {
             for (int z = 0; z < GridArray.GetLength(1); z++)
             {
-                string gridPosition = GridArray[x,z].canBuild.ToString();
+                string gridPosition = x.ToString() + "," + z.ToString() + " ";
                 debugTextArrays[x, z] = CreateWorldText(transform, gridPosition, GetWorldPosition(x, z));
                 Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x, z +  1), Color.white, 100f);
                 Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x + 1, z), Color.white, 100f);
