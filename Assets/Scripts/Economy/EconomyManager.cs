@@ -29,18 +29,19 @@ public class EconomyManager : MonoBehaviour
 
     public void SetIncrementValue(int newIncrementValue)
     {
-        if (newIncrementValue < 0) throw new ArgumentException("ay yo dis be negative");
+        if (newIncrementValue < 0) throw new ArgumentException("ay yo check dis (SetIncrementValue)");
         incrementValue = newIncrementValue;
     }
     
     public void AddToIncrementValue(int addIncrementValue)
     {
+        if (addIncrementValue < 0) throw new ArgumentException("ay yo check dis (AddToIncrementValue)");
         incrementValue += addIncrementValue;
     }
     
     public void SubtractFromIncrementValue(int subtractIncrementValue)
     {
-        if (subtractIncrementValue > incrementValue) throw new ArgumentException("ay yo dis be negative");;
+        if (subtractIncrementValue > incrementValue || subtractIncrementValue>0) throw new ArgumentException("ay yo check dis (SubtractFromIncrementValue)");;
         incrementValue -= subtractIncrementValue;
     }
 
@@ -65,10 +66,12 @@ public class EconomyManager : MonoBehaviour
         {
             steamCoinBase1000++;
         }
-        
+        //if performance drops, change this
         char currentSuffix = currencySuffix[steamCoinBase1000];
         float base1000Value = steamCoin / Mathf.Pow(1000, steamCoinBase1000);
-        string roundedValue = Math.Round(base1000Value, 2).ToString(CultureInfo.CurrentCulture);
+        string roundedValueBelow1000 = Math.Round(base1000Value, 2).ToString(CultureInfo.CurrentCulture);
+        string roundedValueAbove1000 = $"{Math.Round(base1000Value, 2):0.00}";
+        string roundedValue = steamCoinBase1000==0?roundedValueBelow1000: roundedValueAbove1000;
         string displayValue = roundedValue + currentSuffix;
         moneyTextField.text = displayValue;
     }
