@@ -10,7 +10,7 @@ public class GridProperties : MonoBehaviour
     private static int cellSize = 25;
     private Cell[,] gridArray = new Cell[width, height];
 
-    public static UnityEvent OnBuildingChanged;
+    public static Event OnGridUpdate;
     public static int Width { get => width; }
     public static int Height { get => height; }
     public static int CellSize { get => cellSize; }
@@ -19,15 +19,17 @@ public class GridProperties : MonoBehaviour
         set => gridArray = value;
     }
     
-    public Vector3 GetWorldPosition(int x, int z)
+    public Vector3 GetWorldPosition(Vector2Int cellPosition)
     {
-        return new Vector3(x,0,z) * cellSize;
+        return new Vector3(cellPosition.x,0,cellPosition.y) * cellSize;
     }
 
-    public void GetGridPosition(Vector3 worldPosition, out int x, out int z)
+    public Vector2Int GetGridPosition(Vector3 worldPosition)
     {
+        int x, z;
         x = Mathf.FloorToInt(worldPosition.x / cellSize);
         z = Mathf.FloorToInt(worldPosition.z / cellSize);
+        return new Vector2Int(x, z);
     }
 }
 

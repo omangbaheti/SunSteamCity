@@ -25,13 +25,14 @@ public class GridManager : GridProperties
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 worldPosition = MouseToScreen.GetWorldPosition();
-            GetGridPosition(worldPosition, out int x, out int z);
-            if (ValidateGridCells(new Vector2Int(x,z)))
+            Vector2Int gridPosition = GetGridPosition(worldPosition);
+            if (ValidateGridCells(gridPosition))
             {
-                GameObject house = Instantiate(currentBuilding.GetLevelDetails(1).Model, GetWorldPosition(x, z), Quaternion.identity);
-                List<Vector2Int> occupiedSpaces = currentBuilding.FillGridPositions(new Vector2Int(x, z));
+                GameObject house = Instantiate(currentBuilding.GetLevelDetails(1).Model, GetWorldPosition(gridPosition), Quaternion.identity);
+                List<Vector2Int> occupiedSpaces = currentBuilding.FillGridPositions(gridPosition, currentBuilding);
                 foreach (Vector2Int cell in occupiedSpaces)
                 {
+                    GridArray[cell.x, cell.y].CellType = CoreBuildingTypes.Source;
                     GridArray[cell.x,cell.y].SetBuilding(house.transform);
                 }
             }
@@ -45,13 +46,16 @@ public class GridManager : GridProperties
     
     private bool ValidateGridCells(Vector2Int currentPosition)
     {
-        bool canBuild = false;
+        bool canBuild = true;
         
-        for (int x = 0; x < currentBuilding.Width; x++)
+        for (int x = currentPosition.x; x < currentPosition.x + currentBuilding.Width; x++)
         {
-            for (int z = 0; z < currentBuilding.Length; z++)
+            for (int z = currentPosition.y; z < currentPosition.y + currentBuilding.Length; z++)
             {
                 canBuild = GridArray[x, z].CanBuild();
+                Vector2Int currentPos = new Vector2Int(x, z);
+                Debug.Log($"{canBuild}:{currentPos}");
+                Debug.Log($"Target: {currentPosition.x + currentBuilding.Width}, {currentPosition.y + currentBuilding.Length}");
             }
         }
         return canBuild;

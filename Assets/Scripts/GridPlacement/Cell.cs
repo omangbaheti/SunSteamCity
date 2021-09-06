@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Cell
 {
-    private Transform building = null;
     
+    private Transform building = null;
+    public CoreBuildingTypes CellType { get; set; } = CoreBuildingTypes.Empty;
     public void SetBuilding(Transform transform)
     {
         building = transform;
@@ -16,7 +17,7 @@ public class Cell
 
     public bool CanBuild()
     {
-        return building == null;
+        return CellType == CoreBuildingTypes.Empty;
     }
 
 }

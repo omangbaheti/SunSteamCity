@@ -12,21 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d60039cc1924ba7b04159416b2c6e62, type: 3}
   m_Name: Fisheries
   m_EditorClassIdentifier: 
-  sourceBuildingType: 2
   validInputs: 
   validOutputs: 010000000200000003000000
+  width: 0
+  length: 0
+  sourceBuildingType: 2
   sourceBuildingLevels:
   - levelName: Level 1
     level: 1
     cost: 1000
     productionRate: 1
-    produceValue: 100
-    model: {fileID: 0}
+    model: {fileID: 6586827958906622532, guid: f211554754e6cf24c8230e7bc2da5692, type: 3}
     buildingDescription: This is dummy text for level 1 fishery
+    produceValue: 100
   - levelName: Level 2
     level: 2
     cost: 1000000
     productionRate: 1
-    produceValue: 100000
     model: {fileID: 0}
     buildingDescription: This is dummy text for level 2 fishery
+    produceValue: 100000

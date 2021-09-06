@@ -17,9 +17,4 @@ public class BuildingTemplate
     public float ProductionRate => productionRate;
     public GameObject Model => model;
     public string BuildingDescription => buildingDescription;
-
-
-    
-
-
 }

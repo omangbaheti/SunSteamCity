@@ -4,5 +4,5 @@
     Farm=0,
     Mine=1,
     Fishery=2,
-    Lumber=4
+    Lumber=4,
 }

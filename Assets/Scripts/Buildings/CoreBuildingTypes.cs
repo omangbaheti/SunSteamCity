@@ -4,6 +4,7 @@
     Source=0,
     Production=1,
     Retail=2,
-    Delivery=3
+    Delivery=3,
+    Empty = 4
     
 }

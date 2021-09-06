@@ -19,10 +19,11 @@ public class DebugGrid : GridProperties
         {
             for (int z = 0; z < GridArray.GetLength(1); z++)
             {
-                string gridPosition = x.ToString() + "," + z.ToString() + " ";
-                debugTextArrays[x, z] = CreateWorldText(transform, gridPosition, GetWorldPosition(x, z));
-                Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x, z +  1), Color.white, 100f);
-                Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x + 1, z), Color.white, 100f);
+                Vector2Int gridPosition = new Vector2Int(x, z);
+                string gridPositionString = gridPosition.ToString();
+                debugTextArrays[x, z] = CreateWorldText(transform, gridPositionString, GetWorldPosition(gridPosition));
+                Debug.DrawLine(GetWorldPosition(gridPosition), GetWorldPosition(gridPosition + Vector2Int.up), Color.white, 100f);
+                Debug.DrawLine(GetWorldPosition(gridPosition), GetWorldPosition(gridPosition + Vector2Int.right), Color.white, 100f);
             }
         }
     }
