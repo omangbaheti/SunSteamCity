@@ -1,10 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Cell
 {
-    
-    private Transform building = null;
     public CoreBuildingTypes CellType = CoreBuildingTypes.Empty;
+    private Transform building = null;
     public void SetBuilding(Transform transform)
     {
         building = transform;

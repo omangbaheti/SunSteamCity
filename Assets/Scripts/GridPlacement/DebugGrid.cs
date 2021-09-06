@@ -26,6 +26,12 @@ public class DebugGrid : GridProperties
                 Debug.DrawLine(GetWorldPosition(gridPosition), GetWorldPosition(gridPosition + Vector2Int.right), Color.white, 100f);
             }
         }
+        
+    }
+
+    private void OnGridUpdoot()
+    {
+        Debug.Log("Hari Om");
     }
     
     public TextMeshProUGUI CreateWorldText(Transform parent, string gridPosition, Vector3 localPosition)

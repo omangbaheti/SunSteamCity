@@ -5,19 +5,22 @@ using UnityEngine.Events;
 [Serializable]
 public class GridProperties : MonoBehaviour
 {
+    public static int Width { get => width; }
+    public static int Height { get => height; }
+    public static int CellSize { get => cellSize; }
+    
+    public Cell[,] GridArray { 
+        get => gridArray;
+        set => gridArray = value;
+    }
+    
+    
     private static int width = 5;
     private static int height = 5;
     private static int cellSize = 25;
     private Cell[,] gridArray = new Cell[width, height];
 
-    public static Event OnGridUpdate;
-    public static int Width { get => width; }
-    public static int Height { get => height; }
-    public static int CellSize { get => cellSize; }
-    public Cell[,] GridArray { 
-        get => gridArray;
-        set => gridArray = value;
-    }
+
     
     public Vector3 GetWorldPosition(Vector2Int cellPosition)
     {
