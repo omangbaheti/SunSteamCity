@@ -52,6 +52,7 @@ public class GridManager : GridProperties
         {
             for (int z = currentPosition.y; z < currentPosition.y + currentBuilding.Length; z++)
             {
+                if(!canBuild) break;
                 canBuild = GridArray[x, z].CanBuild();
                 Vector2Int currentPos = new Vector2Int(x, z);
                 Debug.Log($"{canBuild}:{currentPos}");

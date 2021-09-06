@@ -4,7 +4,7 @@ public class Cell
 {
     
     private Transform building = null;
-    public CoreBuildingTypes CellType { get; set; } = CoreBuildingTypes.Empty;
+    public CoreBuildingTypes CellType = CoreBuildingTypes.Empty;
     public void SetBuilding(Transform transform)
     {
         building = transform;
