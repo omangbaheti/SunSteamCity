@@ -7,14 +7,14 @@ using UnityEngine.Events;
 public class InputManager : MonoBehaviour
 {
     private static InputManager _instance;
-    public List<BuildingAssetTemplate> buildingList = new List<BuildingAssetTemplate>();
-    public UnityEvent CreateBuilding;
-    public UnityEvent DestroyBuilding;
-    public UnityEvent UpgradeBuilding;
-    public UnityEvent RotateBuilding;
-    public UnityEvent<BuildingAssetTemplate> ChangeBuilding;
+    public List<SourceBuildingAsset> buildingList = new List<SourceBuildingAsset>();
+    public UnityEvent CreateBuilding = new UnityEvent();
+    public UnityEvent DestroyBuilding = new UnityEvent();
+    public UnityEvent UpgradeBuilding = new UnityEvent();
+    public UnityEvent RotateBuilding = new UnityEvent();
+    public UnityEvent<SourceBuildingAsset> ChangeBuilding = new UnityEvent<SourceBuildingAsset>();
 
-    public Dictionary<string, BuildingAssetTemplate> buildings;
+    public Dictionary<string, SourceBuildingAsset> buildings;
 
     public static InputManager Instance
     {
@@ -37,15 +37,14 @@ public class InputManager : MonoBehaviour
 
     private void Start()
     {
-        buildings = new Dictionary<string, BuildingAssetTemplate>() 
+        buildings = new Dictionary<string, SourceBuildingAsset>() 
         {
             ["Farm"] = buildingList[0],
-            ["Fisheries"] = buildingList[1],
+            ["Fishery"] = buildingList[1],
             ["Lumber"] = buildingList[2],
-            ["Mines"] = buildingList[3],
-            ["Production"] = buildingList[4]
-            
+            ["Mine"] = buildingList[3],
         };
+
     }
 
     private void Update()
@@ -53,6 +52,10 @@ public class InputManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             CreateBuilding?.Invoke();
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            DestroyBuilding?.Invoke();
         }
     }
     

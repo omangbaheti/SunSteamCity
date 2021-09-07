@@ -701,16 +701,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1297473275}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1799897885}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnChangeSelectedBuilding
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Lumber
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &594402392
@@ -936,16 +936,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1297473275}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1799897885}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnChangeSelectedBuilding
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Farm
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1027776121
@@ -1053,11 +1053,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   housePrefab: {fileID: 89004251146784719, guid: a64d8e385a066be47bbac9e1f73bc923,
     type: 3}
-  buildingList:
-  - {fileID: 11400000, guid: 2a8099fc229220a468e2371e5fa88867, type: 2}
-  - {fileID: 11400000, guid: d1e32d2eb6ee6eb469097c6a6acb8faf, type: 2}
-  - {fileID: 11400000, guid: cc4288f774e7fbc47b71730059da4674, type: 2}
-  - {fileID: 11400000, guid: 0c57684f291738344a3a4abaca9e051a, type: 2}
 --- !u!224 &1297473280
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1092,6 +1087,69 @@ MonoBehaviour:
   canDebug: 1
   textMeshPrefab: {fileID: 6937771050728481809, guid: 2bcc2b71b04f21d4ebd27db1c03dd520,
     type: 3}
+--- !u!1 &1799897884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1799897886}
+  - component: {fileID: 1799897885}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1799897885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799897884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d328ead3f64e6a4c85776a837780849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingList:
+  - {fileID: 11400000, guid: 2a8099fc229220a468e2371e5fa88867, type: 2}
+  - {fileID: 11400000, guid: d1e32d2eb6ee6eb469097c6a6acb8faf, type: 2}
+  - {fileID: 11400000, guid: cc4288f774e7fbc47b71730059da4674, type: 2}
+  - {fileID: 11400000, guid: 0c57684f291738344a3a4abaca9e051a, type: 2}
+  CreateBuilding:
+    m_PersistentCalls:
+      m_Calls: []
+  DestroyBuilding:
+    m_PersistentCalls:
+      m_Calls: []
+  UpgradeBuilding:
+    m_PersistentCalls:
+      m_Calls: []
+  RotateBuilding:
+    m_PersistentCalls:
+      m_Calls: []
+  ChangeBuilding:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &1799897886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799897884}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 370.38083, y: 163.1114, z: 88.4151}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1833593419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,16 +1382,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1297473275}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1799897885}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnChangeSelectedBuilding
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Fishery
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2106195278

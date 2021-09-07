@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingAssetTemplate<T> : ScriptableObject
+public abstract class BuildingAssetTemplate: ScriptableObject
 {
     [SerializeField] private List<CoreBuildingTypes> validInputs;
     [SerializeField] private List<CoreBuildingTypes> validOutputs;
@@ -28,6 +28,5 @@ public class BuildingAssetTemplate<T> : ScriptableObject
 
         return occupiedGridPositions;
     }
-    
     
 }

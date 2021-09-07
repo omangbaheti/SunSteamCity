@@ -6,7 +6,7 @@ public class ProductionBuildingAsset : BuildingAssetTemplate
 {
     [SerializeField] private List<ProductionBuilding> productionBuildingLevels;
     
-    public BuildingAssetTemplate GetLevelDetails(int level)
+    public ProductionBuilding GetLevelDetails(int level)
     {
         return productionBuildingLevels[level-1];
     }
