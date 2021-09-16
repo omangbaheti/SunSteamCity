@@ -8,11 +8,11 @@ public class InputManager : MonoBehaviour
 {
     private static InputManager _instance;
     public List<SourceBuildingAsset> buildingList = new List<SourceBuildingAsset>();
-    public UnityEvent CreateBuilding = new UnityEvent();
-    public UnityEvent DestroyBuilding = new UnityEvent();
-    public UnityEvent UpgradeBuilding = new UnityEvent();
-    public UnityEvent RotateBuilding = new UnityEvent();
-    public UnityEvent<SourceBuildingAsset> ChangeBuilding = new UnityEvent<SourceBuildingAsset>();
+    public UnityEvent CreateBuilding;
+    public UnityEvent DestroyBuilding;
+    public UnityEvent UpgradeBuilding;
+    public UnityEvent RotateBuilding;
+    public UnityEvent<SourceBuildingAsset> ChangeBuilding;
 
     public Dictionary<string, SourceBuildingAsset> buildings;
 

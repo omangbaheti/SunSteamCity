@@ -16,12 +16,12 @@ public class GridManager : GridProperties
                 GridArray[x, z] = new Cell();
             }
         }
-        InputManager.Instance.CreateBuilding.AddListener(OnGridUpdoot);
+        InputManager.Instance.CreateBuilding.AddListener(OnGridUpdate);
         InputManager.Instance.ChangeBuilding.AddListener(UpdateBuilding);
         InputManager.Instance.DestroyBuilding.AddListener(DestroyBuilding);
     }
     
-    private void OnGridUpdoot()
+    private void OnGridUpdate()
     {
         if(currentBuilding == null) return;
         
@@ -76,6 +76,8 @@ public class GridManager : GridProperties
     }
     private void OnDisable()
     {
-        InputManager.Instance.CreateBuilding.RemoveListener(OnGridUpdoot);
+        InputManager.Instance.CreateBuilding.RemoveListener(OnGridUpdate);
+        InputManager.Instance.ChangeBuilding.RemoveListener(UpdateBuilding);
+        InputManager.Instance.DestroyBuilding.RemoveListener(DestroyBuilding);
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(GridManager))]
 public class DebugGrid : GridProperties
 {
+    private float duration = 100f;
     public bool canDebug;
     public GameObject textMeshPrefab;
     private TextMeshProUGUI[,] debugTextArrays = new TextMeshProUGUI[Width, Height]; 
@@ -22,17 +23,16 @@ public class DebugGrid : GridProperties
                 Vector2Int gridPosition = new Vector2Int(x, z);
                 string gridPositionString = gridPosition.ToString();
                 debugTextArrays[x, z] = CreateWorldText(transform, gridPositionString, GetWorldPosition(gridPosition));
-                Debug.DrawLine(GetWorldPosition(gridPosition), GetWorldPosition(gridPosition + Vector2Int.up), Color.white, 100f);
-                Debug.DrawLine(GetWorldPosition(gridPosition), GetWorldPosition(gridPosition + Vector2Int.right), Color.white, 100f);
+                Vector3 startPosition = GetWorldPosition(gridPosition);
+                Vector3 verticallyUpPosition = GetWorldPosition(gridPosition + Vector2Int.up);
+                Vector3 horizontallyRightPosition = GetWorldPosition(gridPosition + Vector2Int.right);
+                Debug.DrawLine(startPosition, verticallyUpPosition, Color.white, duration);
+                Debug.DrawLine(startPosition, horizontallyRightPosition, Color.white, duration);
             }
         }
         
     }
-
-    private void OnGridUpdoot()
-    {
-        Debug.Log("Hari Om");
-    }
+    
     
     public TextMeshProUGUI CreateWorldText(Transform parent, string gridPosition, Vector3 localPosition)
     {

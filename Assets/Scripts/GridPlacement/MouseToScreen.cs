@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,9 +16,6 @@ public class MouseToScreen : MonoBehaviour
             Vector3 worldPosition = screenToWorldRay.GetPoint(distance);
             return worldPosition;
         }
-        else
-        {
-            return Vector3.zero;
-        }
+        throw new Exception("Raycast not working");
     }
 }
