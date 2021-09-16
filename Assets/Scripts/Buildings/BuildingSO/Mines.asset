@@ -14,13 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   validInputs: 
   validOutputs: 010000000200000003000000
+  width: 1
+  length: 1
   sourceBuildingType: 1
   sourceBuildingLevels:
   - levelName: Level 1
     level: 1
     cost: 100
     productionRate: 1
-    model: {fileID: 0}
+    model: {fileID: 5516479148308446305, guid: 90a3d5d73efd90e4ba8b8de79f7578df, type: 3}
     buildingDescription: This is dummy text for level 1 mine
     produceValue: 10
   - levelName: Level 2

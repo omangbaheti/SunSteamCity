@@ -12,21 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d60039cc1924ba7b04159416b2c6e62, type: 3}
   m_Name: Farms
   m_EditorClassIdentifier: 
-  sourceBuildingType: 0
   validInputs: 
   validOutputs: 010000000200000003000000
+  width: 1
+  length: 1
+  sourceBuildingType: 0
   sourceBuildingLevels:
   - levelName: Level 1
     level: 1
     cost: 10
     productionRate: 1
-    produceValue: 1
-    model: {fileID: 0}
+    model: {fileID: 89004251146784719, guid: a64d8e385a066be47bbac9e1f73bc923, type: 3}
     buildingDescription: This is dummy text for level 1 farm
+    produceValue: 1
   - levelName: Level 2
     level: 2
     cost: 10000
     productionRate: 1
-    produceValue: 1000
     model: {fileID: 0}
     buildingDescription: This is dummy text for level 2 farm
+    produceValue: 1000
