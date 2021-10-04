@@ -22,6 +22,6 @@ MonoBehaviour:
     level: 1
     cost: 50
     productionRate: 200
-    model: {fileID: 919132149155446097, guid: 07a55a3813ebee546a939869f16f7342, type: 3}
+    model: {fileID: 2571116978926509844, guid: e196d8590320a65459ee05027e9dc37a, type: 3}
     buildingDescription: THis is something
-    produceValue: 0
+    produceValue: 500

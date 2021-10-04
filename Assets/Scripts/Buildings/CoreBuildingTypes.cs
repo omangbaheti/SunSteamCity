@@ -1,4 +1,5 @@
-﻿public enum CoreBuildingTypes
+﻿public enum 
+    CoreBuildingTypes
 {
     NULL=-1,
     Source=0,

@@ -41,7 +41,7 @@ public class EconomyManager : MonoBehaviour
     
     public void SubtractFromIncrementValue(int subtractIncrementValue)
     {
-        if (subtractIncrementValue > incrementValue || subtractIncrementValue>0) throw new ArgumentException("ay yo check dis (SubtractFromIncrementValue)");;
+        if (subtractIncrementValue > incrementValue || subtractIncrementValue<0) throw new ArgumentException("ay yo check dis (SubtractFromIncrementValue)");;
         incrementValue -= subtractIncrementValue;
     }
 
