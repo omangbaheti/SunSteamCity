@@ -24,11 +24,11 @@ MonoBehaviour:
     productionRate: 1
     model: {fileID: 89004251146784719, guid: a64d8e385a066be47bbac9e1f73bc923, type: 3}
     buildingDescription: This is dummy text for level 1 farm
-    produceValue: 1
+    produceValue: 5
   - levelName: Level 2
     level: 2
     cost: 10000
     productionRate: 1
     model: {fileID: 0}
     buildingDescription: This is dummy text for level 2 farm
-    produceValue: 1000
+    produceValue: 0

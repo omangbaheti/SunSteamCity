@@ -21,6 +21,7 @@ public abstract class BuildingAssetTemplate: ScriptableObject
         {
             for (int y = 0; y < building.Length; y++)
             {
+                // if (x < 0 || x >= GridProperties.Width || y < 0 || y >= GridProperties.Height) continue;
                 occupiedGridPositions.Add(offset + new Vector2Int(x, y));
                 Debug.Log($"Filling:{offset + new Vector2Int(x, y)}");
             }

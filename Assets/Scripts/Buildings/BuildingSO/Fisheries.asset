@@ -22,13 +22,13 @@ MonoBehaviour:
     level: 1
     cost: 1000
     productionRate: 1
-    model: {fileID: 6586827958906622532, guid: f211554754e6cf24c8230e7bc2da5692, type: 3}
+    model: {fileID: 6117103213534457691, guid: 2f07e569c65a5c944a7f50a704ed8796, type: 3}
     buildingDescription: This is dummy text for level 1 fishery
-    produceValue: 100
+    produceValue: 50
   - levelName: Level 2
     level: 2
     cost: 1000000
     productionRate: 1
     model: {fileID: 0}
     buildingDescription: This is dummy text for level 2 fishery
-    produceValue: 100000
+    produceValue: 0

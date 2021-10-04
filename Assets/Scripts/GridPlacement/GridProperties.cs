@@ -20,8 +20,6 @@ public class GridProperties : MonoBehaviour
     private static int cellSize = 25;
     private Cell[,] gridArray = new Cell[width, height];
 
-
-    
     public Vector3 GetWorldPosition(Vector2Int cellPosition)
     {
         return new Vector3(cellPosition.x,0,cellPosition.y) * cellSize;
