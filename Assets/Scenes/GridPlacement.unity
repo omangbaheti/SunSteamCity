@@ -484,6 +484,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207120242}
   m_CullTransparentMesh: 1
+--- !u!114 &227544795 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 781698715487223599, guid: d7fb612ba4f81de4ea21fc17f637cfdc,
+    type: 3}
+  m_PrefabInstance: {fileID: 946448354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e4530f6fb9f7074ebaa5eb5edc01add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &319870065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,6 +1134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   housePrefab: {fileID: 89004251146784719, guid: a64d8e385a066be47bbac9e1f73bc923,
     type: 3}
+  ecoManager: {fileID: 227544795}
 --- !u!224 &1297473280
 RectTransform:
   m_ObjectHideFlags: 0
