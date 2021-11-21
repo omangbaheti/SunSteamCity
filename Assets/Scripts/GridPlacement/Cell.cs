@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class Cell
 {
-    public CoreBuildingTypes CellType = CoreBuildingTypes.Empty;
+    public SimpleBuildingType CellType = SimpleBuildingType.Empty;
     private int productionValue = 0;
 
     public int ProductionValue => productionValue;
@@ -14,7 +14,7 @@ public class Cell
     public void SetBuilding(Transform transform, int prodValue)
     {
         building = transform;
-        if(CellType == CoreBuildingTypes.Source) productionValue=prodValue;
+        productionValue=prodValue;
     }
 
     public void DestroyBuilding()
@@ -24,7 +24,7 @@ public class Cell
 
     public bool CanBuild()
     {
-        return CellType == CoreBuildingTypes.Empty;
+        return CellType == SimpleBuildingType.Empty;
     }
     
 }

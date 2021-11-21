@@ -27,6 +27,11 @@ public class EconomyManager : MonoBehaviour
         StartCoroutine(MoneyIncrementCooldown());
     }
 
+    public void BuyBuilding(int price)
+    {
+        steamCoin -= (ulong) price;
+    }
+    
     public void SetIncrementValue(int newIncrementValue)
     {
         if (newIncrementValue < 0) throw new ArgumentException("ay yo check dis (SetIncrementValue)");
