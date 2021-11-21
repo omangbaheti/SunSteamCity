@@ -1,17 +1,22 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BuildingAssetTemplate: ScriptableObject
+public class SimpleBuilding : MonoBehaviour
 {
-    [SerializeField] private List<CoreBuildingTypes> validInputs;
-    [SerializeField] private List<CoreBuildingTypes> validOutputs;
+    [SerializeField] private SimpleBuildingType simpleBuildingType;
+    [SerializeField] private int price;
+    [SerializeField] private int productionRate;
     [SerializeField] private int width;
     [SerializeField] private int length;
+    [SerializeField] private GameObject model;
     
-    public List<CoreBuildingTypes> ValidInputs => validInputs;
-    public List<CoreBuildingTypes> ValidOutputs => validOutputs;
-    public int Length => length;
+    
     public int Width => width;
+    public int Length => length;
+    public SimpleBuildingType SimpleBuildingType => simpleBuildingType;
+    public int Price => price;
+    public int ProductionRate => productionRate;
+    public GameObject Model => model;
     
     public List<Vector2Int> FillGridPositions(Vector2Int offset, BuildingAssetTemplate building=null, SimpleBuilding simpleBuilding=null)
     {
@@ -29,5 +34,13 @@ public abstract class BuildingAssetTemplate: ScriptableObject
 
         return occupiedGridPositions;
     }
-    
+}
+
+public enum SimpleBuildingType
+{
+    NULL=-1,
+    Farm=0,
+    Mine=1,
+    Lumber=2,
+    Empty=3
 }
