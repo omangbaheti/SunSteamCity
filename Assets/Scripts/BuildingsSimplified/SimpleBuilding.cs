@@ -9,13 +9,13 @@ public class SimpleBuilding : MonoBehaviour
     [SerializeField] private int width;
     [SerializeField] private int length;
     [SerializeField] private GameObject model;
-    
-    
-    public int Width => width;
-    public int Length => length;
+
+
     public SimpleBuildingType SimpleBuildingType => simpleBuildingType;
     public int Price => price;
     public int ProductionRate => productionRate;
+    public int Width => width;
+    public int Length => length;
     public GameObject Model => model;
     
     public List<Vector2Int> FillGridPositions(Vector2Int offset, BuildingAssetTemplate building=null, SimpleBuilding simpleBuilding=null)
