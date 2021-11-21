@@ -1003,7 +1003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 86162132512553528}
   m_Layer: 0
-  m_Name: eCoNoMYDaDDy
+  m_Name: EconomyManagerComplete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
