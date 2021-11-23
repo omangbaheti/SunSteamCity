@@ -31,29 +31,6 @@ public class GridManagerMonoBehaviour : GridPropertiesMonoBehaviour
         buildingTiles = CreateBoard();
     }
 
-    // public void RotateBuilding()
-    // {
-    //    SimpleBuilding buildingToPlace = BuildingToPlace.GetComponent<SimpleBuilding>();
-    //    Quaternion buildingRotation = BuildingToPlace.transform.rotation;
-    //    Vector3 finalRotation = new Vector3(buildingRotation.x, Convert.ToInt32(buildingToPlace.isVertical) * 90, buildingRotation.z);
-    //    buildingToPlace.isVertical = !buildingToPlace.isVertical;
-    //    ClearPreviousPositions(buildingToPlace.SimpleBuildingType);
-    //    
-    //    if (ValidateGridCells(buildingToPlace.placedPosition, buildingToPlace.dimension))
-    //    {
-    //        buildingRotation.eulerAngles = finalRotation;
-    //        BuildingToPlace.transform.rotation = buildingRotation;
-    //        UpdateGrid(buildingToPlace.placedPosition);
-    //    }
-    //    else
-    //    {
-    //        buildingToPlace.isVertical = !buildingToPlace.isVertical;
-    //        buildingToPlace.FlashColor(Color.red);
-    //        UpdateGrid(buildingToPlace.placedPosition);
-    //    }
-    //    
-    // }
-
     public void UpdateGrid(Vector2Int coordinates)
     {
        if(BuildingToPlace == null)
@@ -89,15 +66,16 @@ public class GridManagerMonoBehaviour : GridPropertiesMonoBehaviour
 
     protected GameObject[,] CreateBoard()
     {
+        int counter = 0;
         GameObject[,] tiles = new GameObject[Width,Height];
+        Cell[] childrenCell = GetComponentsInChildren<Cell>();
         for (int i = 0; i < Width; i++)
         {
             for (int j = 0; j < Height; j++)
             {
-                Vector3 instantiatingPosition = new Vector3(Width * CellSize * i, 0f, Height * CellSize * j);
-                tiles[i,j] = Instantiate(tile,instantiatingPosition, Quaternion.identity, transform);
-                cells[i,j] = tiles[i, j].GetComponent<Cell>();
+                cells[i, j] = childrenCell[counter++];
                 cells[i,j].CellCoords = new Vector2Int(i, j);
+                tiles[i, j] = cells[i, j].gameObject;
             }
         }
         return tiles;

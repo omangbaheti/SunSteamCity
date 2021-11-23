@@ -1098,7 +1098,7 @@ MonoBehaviour:
   PlacementPoseValid: {fileID: 1406335286}
   SpawnedObject: {fileID: 835823353}
   CurrentTime: {fileID: 786673011}
-  arGameObject: {fileID: 5128958631999857168, guid: d39f56bd01df76d49af8d966293e881f,
+  arGameObject: {fileID: 6053469648284698425, guid: d39f56bd01df76d49af8d966293e881f,
     type: 3}
   placementIndicator: {fileID: 1368874960}
 --- !u!114 &1659859601
