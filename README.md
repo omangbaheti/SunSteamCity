@@ -1,2 +1,0 @@
-# SunSteamCity
- AR City Builder

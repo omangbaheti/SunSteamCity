@@ -6,14 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BlankAR.unity
+    path: Assets/_Scenes/BlankAR.unity
     guid: 6bdce89659816455b9f906fc62d19910
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 398c6d85c46f2474ab76eb8f19eba8a7,
-      type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
-    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: de157d2dbc3813747b888b41b4cba471,
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 535b2c557911cb64a960bf6694e4075c,
       type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: de8a8e4f987434338a4b1062feb8d069,
       type: 2}

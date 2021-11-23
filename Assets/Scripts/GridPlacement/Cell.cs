@@ -1,30 +1,35 @@
+using System;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class Cell
+public class Cell: MonoBehaviour
 {
-    public SimpleBuildingType CellType = SimpleBuildingType.Empty;
-    private int productionValue = 0;
-
-    public int ProductionValue => productionValue;
-
-    private Transform building = null;
-
-    public Transform Building { get => building; }
-    public void SetBuilding(Transform transform, int prodValue)
-    {
-        building = transform;
-        productionValue=prodValue;
+    public Vector2Int cellCoordinates;
+    public Vector2Int CellCoords { get => cellCoordinates;
+        set { cellCoordinates = value; }
     }
-
-    public void DestroyBuilding()
-    {
-        building = null;
-    }
-
-    public bool CanBuild()
-    {
-        return CellType == SimpleBuildingType.Empty;
-    }
+    public SimpleBuildingType buildingOccupancy;
     
+    private GridManagerMonoBehaviour gridManager;
+    private bool placed;
+
+
+    public void SetBuilding(GameObject building)
+    {
+        Instantiate(building, transform.position, Quaternion.identity, gridManager.transform);
+        buildingOccupancy = building.GetComponent<SimpleBuilding>().SimpleBuildingType;
+    }
+    private void Awake()
+    {
+        gridManager = GetComponentInParent<GridManagerMonoBehaviour>();
+        buildingOccupancy = SimpleBuildingType.NULL;
+        
+    }
+
+    private void OnMouseDown()
+    {
+        gridManager.UpdateGrid(CellCoords);
+    }
+
+
 }
