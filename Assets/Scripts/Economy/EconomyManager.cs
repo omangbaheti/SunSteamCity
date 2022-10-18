@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class EconomyManager : MonoBehaviour
 {
+    public static event Action MoneyUpdated;
+    
     [SerializeField] private TextMeshProUGUI moneyTextField;
     [SerializeField] private List<char> currencySuffix;
     [SerializeField] private int incrementValue = 1;
@@ -80,5 +82,6 @@ public class EconomyManager : MonoBehaviour
         string roundedValue = steamCoinBase1000==0?roundedValueBelow1000: roundedValueAbove1000;
         string displayValue = roundedValue + currentSuffix;
         moneyTextField.text = displayValue;
+        MoneyUpdated?.Invoke();
     }
 }

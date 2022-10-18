@@ -15,9 +15,9 @@ public class GridPropertiesMonoBehaviour : MonoBehaviour
     }
     
     
-    private static int width = 10;
-    private static int height = 10;
-    private static float cellSize = 0.01f;
+    private static int width = 5;
+    private static int height = 5;
+    private static float cellSize = 0.1f;
     private Cell[,] gridArray = new Cell[width, height];
 
     public Vector3 GetWorldPosition(Vector2Int cellPosition)

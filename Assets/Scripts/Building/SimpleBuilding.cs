@@ -1,4 +1,7 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SimpleBuilding : MonoBehaviour
@@ -11,6 +14,8 @@ public class SimpleBuilding : MonoBehaviour
     [SerializeField] private int width;
     [SerializeField] private int length;
     [SerializeField] private GameObject model;
+    [SerializeField] private GameObject coinAndText;
+    
     
     private Material[] allMaterials;
     private List<Color> allColors = new List<Color>();
@@ -32,10 +37,43 @@ public class SimpleBuilding : MonoBehaviour
     private void Start()
     {
         allMaterials = GetComponentInChildren<Renderer>().materials;
-        for (int i = 0; i < allMaterials.Length; i++)
-            allColors.Add(allMaterials[i].color);
+        foreach (Material mat in allMaterials)
+            allColors.Add(mat.color);
     }
-    
+
+    // private void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.Space))
+    //     {
+    //         Debug.Log("hello");
+    //         ShowCoinViz();
+    //     }
+    // }
+
+    private void OnEnable()
+    {
+        EconomyManager.MoneyUpdated += ShowCoinViz;
+    }
+
+    private void OnDisable()
+    {
+        EconomyManager.MoneyUpdated -= ShowCoinViz;
+    }
+
+    private void ShowCoinViz()
+    {
+        GameObject cnt=Instantiate(coinAndText, transform.position + 0.1f * Vector3.up, Quaternion.identity);
+        cnt.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().SetText(productionRate.ToString());
+        cnt.GetComponent<Rigidbody>().velocity=0.1f*Vector3.up;
+        StartCoroutine(DestroyCoin(cnt));
+    }
+
+    private IEnumerator DestroyCoin(GameObject cnt)
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(cnt);
+    }
+
     public List<Vector2Int> FillGridPositions(Vector2Int offset, SimpleBuilding simpleBuilding)
     {
         List<Vector2Int> occupiedGridPositions = new List<Vector2Int>();

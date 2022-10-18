@@ -63,5 +63,6 @@ public class PlacementManager : MonoBehaviour
     {
         spawnedObject = Instantiate(arGameObject, placementPose.position - new Vector3(0, -0.1f, 0), placementPose.rotation);
         placed = true;
+        placementIndicator.SetActive(false);
     }
 }
